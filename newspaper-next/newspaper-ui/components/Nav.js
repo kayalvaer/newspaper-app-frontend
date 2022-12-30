@@ -113,7 +113,7 @@ const Nav = () => {
                 </Link>
               </li>
               <li>
-                <Link legacyBehavior href="/register">
+                <Link legacyBehavior href="/auth/register">
                   <a className="md:p-2 block py-2 hover:text-purple-400 text-black">
                     Register
                   </a>

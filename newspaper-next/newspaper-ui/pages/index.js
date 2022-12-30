@@ -112,17 +112,19 @@ export default function index({ posts }) {
             --tw-text-opacity: 1;
             color: rgb(0 0 0 / var(--tw-text-opacity));
         } text-white p-2 ${
-          pageIndex === (data && data.meta.pagination.pageCount)
+          pageIndex === (data.data && data.data?.meta?.pagination?.pageCount)
             ? "bg-gray-300"
             : "bg-blue-400"
         }`}
-          disabled={pageIndex === (data && data.meta.pagination.pageCount)}
+          disabled={
+            pageIndex === (data.data && data.data?.meta?.pagination?.pageCount)
+          }
           onClick={() => setPageIndex(pageIndex + 1)}
         >
           Next
         </button>
         <span>{`${pageIndex} of ${
-          data && data.meta.pagination.pageCount
+          data.data && data.data?.meta?.pagination?.pageCount
         }`}</span>
       </div>
     </Layout>

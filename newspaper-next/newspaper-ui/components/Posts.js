@@ -29,7 +29,7 @@ const Posts = ({ posts, edit }) => {
           </div>
           <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
             {posts?.map((post) => (
-              <article className="flex flex-col bg-gray-900">
+              <article className="flex flex-col bg-gray-900" key={post.id}>
                 <a
                   rel="noopener noreferrer"
                   href="#"

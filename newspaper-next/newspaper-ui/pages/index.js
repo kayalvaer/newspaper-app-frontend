@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 import qs from "qs";
 import Posts from "../components/Posts";

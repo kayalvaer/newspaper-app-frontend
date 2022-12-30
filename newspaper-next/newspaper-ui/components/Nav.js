@@ -2,8 +2,6 @@ import Link from "next/link";
 import { signOut, useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { fetcher } from "../lib/api";
-import { setToken, unsetToken } from "../lib/auth";
-import { useUser } from "../lib/authContext";
 
 const Nav = () => {
   const { data: session } = useSession();

@@ -112,13 +112,11 @@ export default function index({ posts }) {
             --tw-text-opacity: 1;
             color: rgb(0 0 0 / var(--tw-text-opacity));
         } text-white p-2 ${
-          pageIndex === (data.data && data.data?.meta?.pagination?.pageCount)
+          pageIndex === (data && data?.meta?.pagination?.pageCount)
             ? "bg-gray-300"
             : "bg-blue-400"
         }`}
-          disabled={
-            pageIndex === (data.data && data.data?.meta?.pagination?.pageCount)
-          }
+          disabled={pageIndex === (data && data?.meta?.pagination?.pageCount)}
           onClick={() => setPageIndex(pageIndex + 1)}
         >
           Next
@@ -131,7 +129,7 @@ export default function index({ posts }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const postsResponse = await fetcher(
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/posts?pagination[page]=1&pagination[pageSize]=5&populate=*`
   );
